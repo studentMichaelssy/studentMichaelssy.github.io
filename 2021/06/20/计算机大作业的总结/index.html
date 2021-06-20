@@ -20,28 +20,36 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="粟世源的blog">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="计算机大作业的总结（施工中） ¶基于卷积神经网络的人脸表情识别的实现 ¶一、什么是卷积神经网络 ¶二、如何实现人脸表情识别   ¶数据集的收集与处理 进行模型训练使用的数据集是kaggle网站上的fer2013数据集 fer2013https:&#x2F;&#x2F;www.kaggle.com&#x2F;msambare&#x2F;fer2013 Fer2013人脸表情数据集由35886张人脸表情图片组成，其中，测试图（Trainin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机大作业的总结（施工中）">
+<meta property="og:url" content="http://example.com/2021/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A4%A7%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="粟世源的blog">
+<meta property="og:description" content="计算机大作业的总结（施工中） ¶基于卷积神经网络的人脸表情识别的实现 ¶一、什么是卷积神经网络 ¶二、如何实现人脸表情识别   ¶数据集的收集与处理 进行模型训练使用的数据集是kaggle网站上的fer2013数据集 fer2013https:&#x2F;&#x2F;www.kaggle.com&#x2F;msambare&#x2F;fer2013 Fer2013人脸表情数据集由35886张人脸表情图片组成，其中，测试图（Trainin">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:%5CUsers%5CSSY%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210606173132450.png">
+<meta property="og:image" content="c:%5CUsers%5CSSY%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210617212405070.png">
+<meta property="article:published_time" content="2021-06-20T14:24:48.935Z">
+<meta property="article:modified_time" content="2021-06-20T14:28:37.251Z">
 <meta property="article:author" content="Michael-ssy">
+<meta property="article:tag" content="机器学习，表情识别">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CSSY%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210606173132450.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A4%A7%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%BB%E7%BB%93/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>粟世源的blog</title>
+  <title>计算机大作业的总结（施工中） | 粟世源的blog</title>
   
 
 
@@ -155,89 +163,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/20/20%E5%B2%81%E7%94%9F%E6%97%A5%E5%89%8D%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Michael-ssy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="粟世源的blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/20/20%E5%B2%81%E7%94%9F%E6%97%A5%E5%89%8D%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-title-link" itemprop="url">20岁生日前的碎碎念</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-20 23:26:55 / 修改时间：23:42:25" itemprop="dateCreated datePublished" datetime="2021-06-20T23:26:55+08:00">2021-06-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1>20岁生日前的碎碎念</h1>
-<h2 id="随便写写"><a class="header-anchor" href="#随便写写">¶</a>随便写写</h2>
-<p>2021年6月20日 22:33:50，我终于开始写了一两个月以前就想写的博客。<s>主要还是因为重度拖延症</s><img class="emoji" draggable="false" alt="😂" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f602.png"/>之所以想写这个博客，还是想给自己的生日带来点仪式感吧。想想18岁生日当天要考第一次理综，19岁生日因为高考的推迟而要备考，到了20岁又要准备接下来的考试周。已经好久没有过一个有意思的生日了，就打算自己做一些有意思的事情。原本还想回望一下之前10年再展望接下来几年，也因为时间急迫要拖延到考试周结束后了。<s>一定会更新的</s></p>
-<p>采取这样的方式也是因为我对电脑和编程比较感兴趣吧。可以比较容易作出一些成果，好像在做实验一样，只需要跟着步骤来就可以得到相应的效果，反馈感比较强。编程的时候我会比较专注，编程的过程好像在创造一个属于自己的世界，可以听着音乐，顺着思路解决一个又一个问题。<s>debug的时候不在我讨论的范围内</s>。<s>一包烟，一杯茶，一个bug改一天系列</s><img class="emoji" draggable="false" alt="😕" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f615.png"/></p>
-<p>至于这一次的20岁生日，我想感谢这20年以来所有人对我的帮助。首先是父母与亲人，他们给了我生命，为我创造了很好的环境，我才能成为现在的我。除了他们，我还很感谢从小到大我遇到的所有的同学，老师。从他们身上，我学会了很多，最重要的是学会了如何与别人交往。<s>阳光下的瓜皮的各位，我爱你们</s><img class="emoji" draggable="false" alt="😘" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f618.png"/>还有很多的话想讲，等到考试周之后再讲吧​，​有点晚了​。<img class="emoji" draggable="false" alt="😵" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f635.png"/></p>
-<p>博客的功能还很少，很多功能都没来的及上线，也希望了解的大佬看到后找我聊一下。对编程有同好的也可以找我，没人和我一起写代码的感觉太难受了<img class="emoji" draggable="false" alt="😢" src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f622.png"/>我还没在手机上看过预览，如果有什么建议也可以提。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/20/20%E5%B2%81%E7%94%9F%E6%97%A5%E5%89%8D%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -253,10 +182,9 @@
       <meta itemprop="name" content="粟世源的blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A4%A7%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">计算机大作业的总结（施工中）</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          计算机大作业的总结（施工中）
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -289,7 +217,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1>计算机大作业的总结（施工中）</h1>
+        <h1>计算机大作业的总结（施工中）</h1>
 <h2 id="基于卷积神经网络的人脸表情识别的实现"><a class="header-anchor" href="#基于卷积神经网络的人脸表情识别的实现">¶</a>基于卷积神经网络的人脸表情识别的实现</h2>
 <h3 id="一、什么是卷积神经网络"><a class="header-anchor" href="#一、什么是卷积神经网络">¶</a>一、什么是卷积神经网络</h3>
 <h3 id="二、如何实现人脸表情识别"><a class="header-anchor" href="#二、如何实现人脸表情识别">¶</a>二、如何实现人脸表情识别</h3>
@@ -321,97 +249,36 @@
 </li>
 </ol>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%8C%E8%A1%A8%E6%83%85%E8%AF%86%E5%88%AB/" rel="tag"># 机器学习，表情识别</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E8%8A%9C%E6%B9%96/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Michael-ssy">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="粟世源的blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E8%8A%9C%E6%B9%96/" class="post-title-link" itemprop="url">我的第一篇博客 芜湖</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-19 23:26:04" itemprop="dateCreated datePublished" datetime="2021-04-19T23:26:04+08:00">2021-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-20 18:21:29" itemprop="dateModified" datetime="2021-06-20T18:21:29+08:00">2021-06-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>第一次写博客哈<br>
-时间：2021/4/19 23:32<br>
-很TM激动</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E8%8A%9C%E6%B9%96/" rel="prev" title="我的第一篇博客 芜湖">
+      <i class="fa fa-chevron-left"></i> 我的第一篇博客 芜湖
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/06/20/20%E5%B2%81%E7%94%9F%E6%97%A5%E5%89%8D%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/" rel="next" title="20岁生日前的碎碎念">
+      20岁生日前的碎碎念 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -466,6 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">计算机大作业的总结（施工中）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BA%BA%E8%84%B8%E8%A1%A8%E6%83%85%E8%AF%86%E5%88%AB%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.1.</span> <span class="nav-text">基于卷积神经网络的人脸表情识别的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、什么是卷积神经网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%A1%A8%E6%83%85%E8%AF%86%E5%88%AB"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、如何实现人脸表情识别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E6%94%B6%E9%9B%86%E4%B8%8E%E5%A4%84%E7%90%86"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">数据集的收集与处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">数据的导入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">模型的构建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">模型训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GUI%E7%9A%84%E5%88%B6%E4%BD%9C"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">GUI的制作</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
